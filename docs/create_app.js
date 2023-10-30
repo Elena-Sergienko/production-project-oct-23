@@ -198,5 +198,35 @@
  * Модуль 1.4
  * Подключаем React и настраиваем css в webpack
  * 
+ * Как НЕ дев зависимости устонавливаем
+ * npm install react react-dom
  * 
- */
+ * Как дев устонавливаем типы для них
+ * npm install -D @types/react @types/react-dom
+ * 
+ * index.ts переименовать на index.tsx
+ * и заменить содержание на реактовское
+ * import {render} from "react-dom";
+ *
+ * render(
+ *   <div>hghghghgh</div>,
+ *   document.getElementById('root')
+ * )
+ * 
+ * Выдает ошибку что нужно импортировать реакт, 
+ * но в новой версии этого делать не надо,
+ *  поэтому исправляем ошибку в настройках:
+ * Поправить строку tsconfig.json
+ * "jsx": "react" -> "jsx": "react-jsx"
+ * 
+ * 
+ * export const Counter = () => { // это именованный экспорт, а не по дефолту
+    return (
+        <div></div>
+    )
+ * }
+ * 
+ * npm install sass-loader sass webpack style-loader css-loader --save-dev
+ * и добавляем лоадер в файл (из документов)
+ * 
+ */ 
