@@ -19,7 +19,7 @@ const {paths, mode, isDev} = options;
     },
     plugins: buildPlugins(options),
     module: {
-        rules: buildLoaders()
+        rules: buildLoaders(options)
       },
     resolve: buildResolvers(),
     devtool: isDev ? 'inline-source-map': undefined, // to track down errors and warnings for Dev mode
